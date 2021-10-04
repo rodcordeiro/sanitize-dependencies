@@ -1,4 +1,12 @@
 import { readdirSync } from "fs";
+import { resolve } from "path";
+
+export interface iData {
+  name: string;
+  type: "dir" | "file";
+  path: string;
+  children?: Array<iData | undefined>;
+}
 
 /**
  * Function getFiles
@@ -13,12 +21,6 @@ export default function getFiles(
   path: string,
   exclude?: string | Array<string>
 ) {
-  interface iData {
-    name: string;
-    type: "dir" | "file";
-    path: string;
-    children?: Array<iData | undefined>;
-  }
   const items = readdirSync(path, {
     withFileTypes: true,
   });
@@ -43,7 +45,8 @@ export default function getFiles(
       }
     })
     .map((item) => {
-      const itempath = path + "\\" + item.name;
+      console.log(path, "\\", item.name);
+      const itempath = resolve(path + "\\" + item.name);
       let data: iData = {
         name: item.name,
         type: item.isDirectory() ? "dir" : "file",
