@@ -1,0 +1,27 @@
+labeler:
+  issues:
+    actions:
+      - opened
+      - milestoned
+      - edited
+      - pinned
+      - reopened
+    at-least-one:
+      labels:
+        - bug
+        - dependencies
+        - enhancement
+assigner:
+  pull-requests:
+    assignee:
+      auto: true
+    actions:
+      - opened
+      - synchronize
+  issues:
+    project:
+      url: https://github.com/rodcordeiro/cordeiro-backend/projects/1
+      column: To do
+    actions:
+      - opened
+      - milestoned

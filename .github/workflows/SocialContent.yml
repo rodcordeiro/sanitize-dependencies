@@ -1,0 +1,33 @@
+name: "Social media integrations"
+
+on:
+  push:
+    branches: "master"
+jobs:
+  CreateImage:
+    name: Create repo img for social media
+    runs-on: ubuntu-latest
+    steps:
+      - name: Open Graph social cards
+        uses: Jasmin2895/open-graph-image@v1.1
+        with:
+          bold-text: "RodCordeiro API"
+          plain-text: "for personal assistance and project managements"
+          theme: "dark"
+
+      - name: Archive open graph image
+        uses: actions/upload-artifact@v2
+        with:
+          name: open-graph-image
+          path: og-image.now.sh.png
+
+      - name: Download all workflow run artifacts
+        uses: actions/download-artifact@v2
+  Resk:
+    name: Create code gists for example
+    runs-on: ubuntu-latest
+    steps:
+      - name: Resk
+        uses: maticzav/resk@v2
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,12 @@
+name: Virtual Assistant
+
+on: [issues, pull_request]
+
+jobs:
+  Assistant:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Issue and Pull Request virtual assistant
+        uses: ppapapetrou76/virtual-assistant@0.4.0
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
