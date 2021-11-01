@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Open Graph social cards
-        uses: Jasmin2895/open-graph-image@v1.1
+        uses: Jasmin2895/open-graph-image@v1.2
         with:
           bold-text: "RodCordeiro API"
           plain-text: "for personal assistance and project managements"
