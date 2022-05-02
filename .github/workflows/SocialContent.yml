@@ -22,7 +22,7 @@ jobs:
           path: og-image.now.sh.png
 
       - name: Download all workflow run artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
   Resk:
     name: Create code gists for example
     runs-on: ubuntu-latest
