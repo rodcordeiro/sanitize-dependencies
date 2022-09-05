@@ -11,7 +11,7 @@
   "author": "Rodrigo Cordeiro <rodrigomendoncca@gmail.com> (https://rodcordeiro.com.br/)",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "16.11.48",
+    "@types/node": "16.11.57",
     "ts-node-dev": "1.1.8",
     "typescript": "4.8.2"
   }
