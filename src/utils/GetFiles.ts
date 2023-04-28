@@ -6,6 +6,7 @@ export interface iData {
   type: "dir" | "file";
   path: string;
   children?: Array<iData | undefined>;
+  dependencies?: Array<string>;
 }
 
 /**
@@ -45,7 +46,6 @@ export default function getFiles(
       }
     })
     .map((item) => {
-      console.log(path, "\\", item.name);
       const itempath = resolve(path + "\\" + item.name);
       let data: iData = {
         name: item.name,
