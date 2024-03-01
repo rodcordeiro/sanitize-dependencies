@@ -16,13 +16,13 @@ jobs:
           theme: "dark"
 
       - name: Archive open graph image
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: open-graph-image
           path: og-image.now.sh.png
 
       - name: Download all workflow run artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
   Resk:
     name: Create code gists for example
     runs-on: ubuntu-latest
